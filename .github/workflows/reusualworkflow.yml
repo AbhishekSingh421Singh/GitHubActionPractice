@@ -1,0 +1,19 @@
+name: Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      some-input:
+        required: true
+        type: string
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print input
+        run: echo "Input value: ${{ inputs.some-input }}"
+
+      - name: Another step
+        run: echo "This is a reusable workflow step"
